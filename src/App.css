@@ -1,2 +1,12 @@
-#root {
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 385px;
+  gap: var(--spacing-400);
+  padding-block: 5.5rem;
+}
+
+@media (width <= 48rem) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
 }
