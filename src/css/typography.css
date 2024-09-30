@@ -1,0 +1,33 @@
+.title--xl {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.title--lg {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.title--base {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: bold;
+}
+.text--lg {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.text--base {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.text--base-semibold {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.italic {
+  font-family: 'RedHatTextItalic', sans-serif;
+  font-style: italic;
+}
