@@ -1,0 +1,23 @@
+.products-layout ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(165px, 1fr));
+  gap: var(--spacing-400) var(--spacing-300);
+}
+
+.products-heading {
+  margin-top: 0;
+  color: var(--rose-900);
+  margin-bottom: 2rem;
+}
+
+@media (width <= 48rem) {
+  .products-layout ul {
+    grid-template-columns: repeat(2, minmax(15vw, 1fr));
+  }
+}
+
+@media (width <= 32rem) {
+  .products-layout ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
