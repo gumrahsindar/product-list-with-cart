@@ -1,0 +1,72 @@
+.modal--overlay {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal--wrapper {
+  width: 37rem;
+  margin: 1rem;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+}
+
+.modal--header h2 {
+  margin-block: 1.5rem 0.5rem;
+  color: var(--rose-900);
+}
+.modal--content {
+  padding: 1.5rem;
+  background-color: var(--rose-50);
+}
+
+.cart--item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rose-100);
+}
+
+.cart--item:not(:first-child) {
+  padding-top: 1rem;
+}
+
+.cart--item img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.cart--item-details {
+  flex: 1;
+}
+.cart--item-calculation {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+.cart--item-calculation p:first-child {
+  color: var(--red);
+}
+.cart--item-calculation p:is(:nth-child(2), :nth-child(3)) {
+  color: var(--rose-500);
+}
+
+.order--total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.order--total p {
+  color: var(--rose-900);
+}
