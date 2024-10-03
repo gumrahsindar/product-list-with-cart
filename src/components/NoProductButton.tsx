@@ -11,7 +11,7 @@ export default function NoProductButton({
         onClick={() => onIncrement()}
         className={clsx(styles['product-button'], 'text--base-semibold')}
       >
-        <div className={styles['img-add-to-cart']}></div>
+        <span className={styles['img-add-to-cart']}></span>
         Add to cart
       </button>
     </div>
