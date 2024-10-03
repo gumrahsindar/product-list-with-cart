@@ -1,0 +1,13 @@
+.btn--start-order {
+  margin-top: 2rem;
+  background-color: var(--red);
+  color: var(--white);
+  width: 100%;
+  padding-block: 1rem;
+  border-radius: 999px;
+  transition: filter 0.3s;
+
+  &:hover {
+    filter: brightness(85%);
+  }
+}
