@@ -9,3 +9,7 @@ export type Dessert = {
   category: string
   price: number
 }
+
+export type TCartItem = Dessert & {
+  quantity: number
+}
