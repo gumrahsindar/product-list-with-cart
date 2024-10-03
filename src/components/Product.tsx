@@ -3,21 +3,20 @@ import ProductButton from './ProductButton'
 import styles from './Product.module.css'
 import type { Dessert } from '../types'
 import NoProductButton from './NoProductButton'
+import { useCartContext } from '../hooks/useCartContext'
 
 type ProductProps = {
   dessert: Dessert
-
-  handleIncrement: () => void
-  handleDecrement: () => void
-  quantity: number
 }
 
-export default function Product({
-  dessert,
-  handleIncrement,
-  handleDecrement,
-  quantity,
-}: ProductProps) {
+export default function Product({ dessert }: ProductProps) {
+  const { cart, handleDecrement, handleIncrement } = useCartContext()
+
+  const quantity =
+    cart.find((item) => item.name === dessert.name)?.quantity ?? 0
+
+  const showProductButton = cart.length > 0 && quantity > 0
+
   return (
     <li>
       <picture>
@@ -33,15 +32,17 @@ export default function Product({
           height={450}
         />
       </picture>
-      {quantity > 0 && (
+      {showProductButton && (
         <ProductButton
           isActive={true}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
+          onIncrement={() => handleIncrement(dessert)}
+          onDecrement={() => handleDecrement(dessert)}
           quantity={quantity}
         />
       )}
-      {quantity === 0 && <NoProductButton onIncrement={handleIncrement} />}
+      {!showProductButton && (
+        <NoProductButton onIncrement={() => handleIncrement(dessert)} />
+      )}
 
       <p className={clsx(styles['dessert--category'], 'text--base')}>
         {dessert.category}

@@ -4,20 +4,18 @@ import styles from './Cart.module.css'
 import CartItemList from './CartItemList'
 import ConfirmModal from './ConfirmModal'
 import CartButton from './CartButton'
-import { TCartItem } from '../types'
+import { useCartContext } from '../hooks/useCartContext'
 
-type CartProps = {
-  cart: TCartItem[]
-}
-
-export default function Cart({ cart }: CartProps) {
+export default function Cart() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { cart } = useCartContext()
 
   const handleConfirmOrder = () => {
     setIsModalOpen(true)
   }
 
   const handleCloseModal = () => {
+    window.location.reload()
     setIsModalOpen(false)
   }
 
